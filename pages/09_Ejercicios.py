@@ -3,7 +3,8 @@ import random
 
 st.subheader("Ejercicio 1: Saludo simple")
 saludo = st.text_input("Escribe tu nombre aqui 👇", )
-st.write("¡Hola, ",saludo, "!")
+if saludo.strip() != "":
+    st.write(f"¡Hola, {saludo}, !")
 
 
 # st.subheader
@@ -12,11 +13,10 @@ st.divider()
 st.subheader("Ejercicio 2: Calculadora de producto")
 num1= st.number_input("Escribe el primer numero", step=1, placeholder="Digita un numero aqui")
 num2= st.number_input("Escribe el segundo numero", step=1, placeholder="Digita otro numero aqui")
+
+st.write(num1 * num2)
 if num1 > 100 or num2 > 100:
     st.warning("Números grandes.")
-else:
-    st.write(num1 * num2)
-
 
 st.divider()
 st.subheader("Ejercicio 3: Convertidor de Temperatura (Radio Buttons)")
