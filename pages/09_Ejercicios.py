@@ -72,11 +72,11 @@ with st.form("formulario"):
     boton = st.form_submit_button("Enviar")
 
     if boton:
-        if asunto.strip() != "" and texto.strip() != "":
+        if texto.strip() != "":
             st.write(f"**Asunto:** {asunto} \n\n **Mensaje:** {texto}"
             )
-        elif asunto.strip()  == "":
-            st.error("El asunto no puede ir vacio")
+        #elif asunto.strip()  == "":
+            #st.error("El asunto no puede ir vacio")
         elif texto.strip()  == "":
             st.error("El texto no puede ir vacio")
             
