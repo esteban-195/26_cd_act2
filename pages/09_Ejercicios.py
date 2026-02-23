@@ -4,7 +4,7 @@ import random
 st.subheader("Ejercicio 1: Saludo simple")
 saludo = st.text_input("Escribe tu nombre aqui 👇", )
 if saludo.strip() != "":
-    st.write(f"¡Hola, {saludo}, !")
+    st.write(f"¡Hola, {saludo}!")
 
 
 # st.subheader
@@ -113,21 +113,27 @@ st.subheader("Ejercicio 7: Lista de compras (Session State)")
 
 agregar = st.text_input("Ingrese un producto", key= 'input_productos')
 
+mensaje = ('Lista vacia')
 if 'productos' not in st.session_state:
     st.session_state.productos = []
-    st.write('Lista vacia')
+
 
 if st.button('Agregar'):
     st.session_state.productos.append(agregar)
     st.success(f'Nuevo producto agregado:  {agregar}')
+    st.write("Productos agregados: ")
 
-st.write("Productos agregados: ")
+if st.button('Limpiar Lista'):
+    st.session_state.productos = []
+if not st.session_state.productos:
+    st.info(mensaje)
 for i, producto in enumerate(st.session_state.productos):
     st.write(f'{i+1}. {producto}')
 
-if st.button('Limpiar'):
-    st.session_state.productos = []
-    st.rerun()
+
+# if not st.session_state.productos:
+#     st.info(mensaje)
+    
 
 
 
