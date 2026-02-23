@@ -28,7 +28,7 @@ st.header("2. La solución: Session State")
 st.write("Este contador usa `st.session_state` para recordar su valor.")
 
 # Inicializar el estado si no existe
-if 'contador_real' not in st.session_state:
+if 'contador_real' not in st.session_state:  
     st.session_state.contador_real = 0
 
 def incrementar_contador():
